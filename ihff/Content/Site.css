@@ -1,5 +1,5 @@
 ﻿html {
-    background-color: #e2e2e2;
+    background-image:url(themes/base/images/backgroundOne.jpg);
     margin: 0;
     padding: 0;
 }
@@ -105,13 +105,13 @@ h5, h6 {
 }
 
     .main-content {
-        background: url("../Images/accent.png") no-repeat;
+        /*background: url("../Images/accent.png") no-repeat;*/
         padding-left: 10px;
         padding-top: 30px;
     }
 
     .featured + .main-content {
-        background: url("../Images/heroAccent.png") no-repeat;
+        /*background: url("../Images/heroAccent.png") no-repeat;*/
     }
 
 header .content-wrapper {
@@ -208,7 +208,8 @@ ul#menu {
 /* page elements
 ----------------------------------------------------------*/
 /* featured */
-.featured {
+/*
+    .featured {
     background-color: #fff;
 }
 
@@ -230,6 +231,8 @@ ul#menu {
         .featured p {
             font-size: 1.1em;
         }
+
+    */
 
 /* page titles */
 hgroup.title {
@@ -656,9 +659,11 @@ tr.pager td {
     /* main layout
     ----------------------------------------------------------*/
     .main-content,
+    /*
     .featured + .main-content {
         background-position: 10px 0;
     }
+    */
 
     .content-wrapper {
         padding-right: 10px;
@@ -672,7 +677,7 @@ tr.pager td {
     /* page content */
     article, aside {
         float: none;
-        width: 100%;
+        width: 50%;
     }
 
     /* ordered list */
@@ -703,7 +708,9 @@ tr.pager td {
      section.feature {
         float: none;
         padding: 10px;
+        /*
         width: auto;
+        */
      }
 
         section.feature img {
@@ -715,7 +722,7 @@ tr.pager td {
 
     /* forms */
     input {
-        width: 90%;
+        width: 40%;
     }
 
     /* login page */
