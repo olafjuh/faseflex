@@ -1,7 +1,9 @@
 ﻿html {
-    background-image:url(themes/base/images/backgroundOne.jpg);
-    margin: 0;
-    padding: 0;
+    background: url(themes/base/images/backgroundOne.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 body {
