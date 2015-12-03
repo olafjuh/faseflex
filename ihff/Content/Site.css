@@ -6,17 +6,14 @@
   background-size: cover;
   /*deze shit maakt de background awesome*/
 
-  asfjasfl;asfdl;asdfja;lskdjfasld;fjlaksdfjl;sadjfaklsdjf;ladjsf;lk
-      asfjasfl;asfdl;asdfja;lskdjfasld;fjlaksdfjl;sadjfaklsdjf;ladjsf;lk
-                   asfjasfl;asfdl;asdfja;lskdjfasld;fjlaksdfjl;sadjfaklsdjf;ladjsf;lk
-                                v
-
-                                asfjasfl;asfdl;asdfja;lskdjfasld;fjlaksdfjl;sadjfaklsdjf;ladjsf;lk
-                                asfjasfl;asfdl;asdfja;lskdjfasld;fjlaksdfjl;sadjfaklsdjf;ladjsf;lk
-
 
 }
 
-body {
-    background-color:sevsbkvbSKDVBSJ:NDVlkZX 
+body div.GreyBackground  {
+    background-color: #333333;
+    left: -333px;
+    width:950px;
+    margin-left:auto;
+    margin-right:auto;
+
 }

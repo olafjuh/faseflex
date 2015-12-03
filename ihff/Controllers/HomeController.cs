@@ -10,7 +10,7 @@ namespace ihff.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC applicatidddfdddon.";
+            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
 
             return View();
         }
@@ -28,5 +28,17 @@ namespace ihff.Controllers
 
             return View();
         }
-    }
+
+        public ActionResult Films()
+        {
+            ViewBag.Message = "Film overzicht";
+
+            return View("/Views/Home/Films.cshtml");
+        }
+        [HttpPost]
+        public ActionResult Films()
+        {
+
+        }
+        }
 }
