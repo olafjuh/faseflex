@@ -35,10 +35,6 @@ namespace ihff.Controllers
 
             return View("/Views/Home/Films.cshtml");
         }
-        [HttpPost]
-        public ActionResult Films()
-        {
-
-        }
+       
         }
 }
