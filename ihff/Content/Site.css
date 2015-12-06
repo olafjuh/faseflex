@@ -1,7 +1,23 @@
 ﻿html {
-    background: url(themes/base/images/backgroundOne.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    background: url(themes/base/images/backgroundOne.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  /*deze shit maakt de background awesome*/
+
+
+}
+
+body{
+    background-color: #333333;
+    left: -333px;
+    width:950px;
+    margin-left:auto;
+    margin-right:auto;
+
+}
+
+div.Lists ul li #MinortyReport {
+    
 }
