@@ -1,4 +1,11 @@
-﻿html {
+﻿*{
+    font-family:'Myanmar Text';
+    margin:0;
+}
+
+
+
+html {
     background: url(themes/base/images/backgroundOne.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -12,12 +19,98 @@
 body{
     background-color: #333333;
     left: -333px;
-    width:950px;
+    width:960px;
     margin-left:auto;
     margin-right:auto;
+    margin-top:0;
+    padding:0;
+    
+    
 
 }
 
 div.Lists ul li #MinortyReport {
     
 }
+
+/* Global Layout*/
+
+html, body{
+   
+    height:100%;
+}
+
+
+
+
+/* Navigation bar */
+
+.nav-bar{
+    margin-right: auto;
+    display:block;
+    
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #EB2544;
+}
+
+nav li {
+    float: left;
+}
+
+nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+                /* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #111;
+}
+
+#home{
+    padding-right:80px;
+}
+
+/*--------------------------------------------------*/
+/*Content*/
+
+
+/*---------------------------------------------------*/
+
+/*Footer*/
+.col ul{
+    list-style-type:none;
+    
+}
+
+footer{
+    position:fixed;
+    width:960px;
+    bottom:0;
+    background-color:#353982;
+    padding-top:5px;
+}
+
+.col{
+    float:left;
+    margin-right:6%;
+    color:white;
+}
+
+
+
+
+
+
+
+
+
