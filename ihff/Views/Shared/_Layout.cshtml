@@ -13,9 +13,9 @@
         <header>
             <div class="nav-bar">
                 <nav>
-                    <ul style="float:left;list-style-type:none;">
-                        <li id="home">@Html.ActionLink("Home", "Index", "Home")</li>
-                    </ul>    
+                    <div id="homeImg">
+                        <a href="@Url.Action("Index", "Home")"><img src="@Url.Content("~/images/logo1.png")" /></a>
+                    </div>
                     <ul>
                         <li>@Html.ActionLink("Agenda", "Index", "Home")</li>
                         <li>@Html.ActionLink("Films", "Index", "Home")</li>
