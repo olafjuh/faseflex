@@ -17,30 +17,25 @@ html {
 }
 
 body{
-    background-color: #333333;
+    background-color: #808080;
     left: -333px;
     width:960px;
     margin-left:auto;
     margin-right:auto;
     margin-top:0;
     padding:0;
+    overflow:scroll;
     
     
 
-}
-
-div.Lists ul li #MinortyReport {
-    
 }
 
 /* Global Layout*/
 
-html, body{
-   
-    height:100%;
+#body{
+    min-height:900px;
+    width: 960px;
 }
-
-
 
 
 /* Navigation bar */
@@ -69,20 +64,22 @@ nav li a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-}
-
-                /* Change the link color to #111 (black) on hover */
-li a:hover {
-    background-color: #111;
+    margin-right:30px;
 }
 
 #home{
-    padding-right:80px;
+    margin-right:200px;
 }
 
 /*--------------------------------------------------*/
 /*Content*/
 
+/*Main*/
+
+h1, p{
+    text-align:center;
+    color:white;
+}
 
 /*---------------------------------------------------*/
 
@@ -93,9 +90,10 @@ li a:hover {
 }
 
 footer{
-    position:fixed;
+    position:relative;
+    display:block;
+    height:180px;
     width:960px;
-    bottom:0;
     background-color:#353982;
     padding-top:5px;
 }
