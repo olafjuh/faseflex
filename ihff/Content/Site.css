@@ -18,7 +18,7 @@ html {
 }
 
 body{
-    background-color: #808080;
+    background-color: #C5C7CA;
     left: -333px;
     width:960px;
     margin-left:auto;
@@ -95,6 +95,32 @@ h1, p{
     padding:0;
 }
 
+/*Wishlist ------------------------------------------*/
+#wishlist-wrapper{
+    height:auto;
+    width:auto;
+    background-color:#EB2544;
+    margin-right:25px;
+    margin-left:25px;
+    margin-top:50px;
+    border-radius:15px;
+    padding:10px,10px,10px,10px;
+    color:white;
+}
+
+#wishlist-table{
+    border-collapse: separate;
+    border-spacing:60px 10px;
+    text-align:left;
+}
+
+ thead{
+    border-bottom:2px solid #C5C7CA;
+}
+
+
+
+
 /*---------------------------------------------------*/
 
 /*Footer*/
@@ -110,11 +136,14 @@ footer{
     width:960px;
     background-color:#353982;
     padding-top:5px;
+        
 }
 
 .col{
     float:left;
-    margin-right:6%;
+    margin-right:50px;
+    margin-left:50px;
+    margin-top:15px;
     color:white;
 }
 
