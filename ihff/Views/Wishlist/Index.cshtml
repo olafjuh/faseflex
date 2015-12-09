@@ -1,6 +1,4 @@
-﻿@{
-    ViewBag.Title = "Wishlist";
-}
+﻿@model IEnumerable<ihff.Models.WishlistItem>
 
 <h1>Wishlist</h1>
 
@@ -16,6 +14,11 @@
            </tr>
         </thead>
         <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>@item.Id</tr>
+            }
+            
            <tr>
                <td>Minority Report</td>
                <td>van Beinum zaal</td>

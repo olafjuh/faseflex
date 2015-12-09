@@ -15,6 +15,11 @@ namespace ihff.Controllers
         {
             return ctx.wishlists;
         }
+
+        public IEnumerable<WishlistItem> GetAllItems(Wishlist wishlist)
+        {
+            return ctx.wishlistItems.Where(c => c.wishID == wishlist.Id);
+        }
         
 
         //save wishlist
