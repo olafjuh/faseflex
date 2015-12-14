@@ -13,12 +13,12 @@ namespace ihff.Controllers
 
         public IEnumerable<Wishlist> GetAllWishlists()
         {
-            return ctx.wishlists;
+            return ctx.Wishlists;
         }
 
         public IEnumerable<WishlistItem> GetAllItems(Wishlist wishlist)
         {
-            return ctx.wishlistItems.Where(c => c.wishID == wishlist.Id);
+            return ctx.WishlistItems.Where(c => c.wishID == wishlist.Id);
         }
         
 

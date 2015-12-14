@@ -11,11 +11,11 @@ namespace ihff.Controllers
          public ihffContext()
             : base("ihffTestConnection")
         {
-            
+            Database.SetInitializer<ihffContext>(null);
         }
 
-        public DbSet<ihff.Models.Activiteit> activiteiten { get; set; }
-        public DbSet<ihff.Models.WishlistItem> wishlistItems { get; set; }
-        public DbSet<ihff.Models.Wishlist> wishlists { get; set; }
+        public DbSet<ihff.Models.Activiteit> Activities{ get; set; }
+        public DbSet<ihff.Models.WishlistItem> WishlistItems { get; set; }
+        public DbSet<ihff.Models.Wishlist> Wishlists { get; set; }
     }
 }

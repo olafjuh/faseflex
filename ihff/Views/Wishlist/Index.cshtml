@@ -16,7 +16,16 @@
         <tbody>
             @foreach (var item in Model)
             {
-                <tr>@item.Id</tr>
+                <tr>
+                    <td>@item.name</td>
+                    <td>@item.location</td>
+                    <td>@item.startTime</td>
+                    <td>@item.persons</td>
+                    (if item.type == "Movie")
+                    {
+                        <td>10,00</td>
+                    }
+                </tr>
             }
             
            <tr>
