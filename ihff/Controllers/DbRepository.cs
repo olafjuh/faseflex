@@ -14,6 +14,7 @@ namespace ihff.Controllers
         public IEnumerable<Wishlist> GetAllWishlists()
         {
             return ctx.Wishlists;
+            
         }
 
         public IEnumerable<WishlistItem> GetAllItems(Wishlist wishlist)
@@ -21,6 +22,18 @@ namespace ihff.Controllers
             return ctx.WishlistItems.Where(c => c.wishID == wishlist.Id);
         }
         
+        public void SaveWishlist(Wishlist wishlist)
+        {
+            ctx.Wishlists.Add(wishlist);
+            ctx.SaveChanges();
+        }
+
+        public void SaveWishlistItems(IEnumerable<WishlistItem> wishlistItems)
+        {
+            foreach (var item in wishlistItems)
+            ctx.WishlistItems.Add(item);
+            ctx.SaveChanges();
+        }
 
         //save wishlist
 

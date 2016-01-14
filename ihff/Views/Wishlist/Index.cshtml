@@ -21,7 +21,7 @@
                     <td>@item.location</td>
                     <td>@item.startTime</td>
                     <td>@item.persons</td>
-                    (if item.type == "Movie")
+                    @if(item.type == "Movie")
                     {
                         <td>10,00</td>
                     }
@@ -51,4 +51,5 @@
             </tr>
         </tbody>
     </table>
+    @Html.ActionLink("Wishlist Opslaan", "SaveWishlist")
 </div>

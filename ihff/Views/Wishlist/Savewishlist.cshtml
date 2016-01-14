@@ -1,0 +1,17 @@
+﻿@model ihff.Models.Wishlist
+@{
+    ViewBag.Title = "Savewishlist";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(m => m.Id)
+    @Html.LabelFor(m => m.email)
+    <br />
+    @Html.TextBoxFor(m => m.email)
+    @Html.ValidationMessageFor(m => m.email)
+    <br />
+    <input type="submit" value="Save Wishlist" />
+}
+
+
