@@ -189,6 +189,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AgendaBlokkenController.cs" />
     <Compile Include="Controllers\DbRepository.cs" />
     <Compile Include="Controllers\ihffContext.cs" />
     <Compile Include="Controllers\template\AccountController.cs" />
@@ -200,6 +201,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Activiteit.cs" />
+    <Compile Include="Models\Activitieswednesday.cs" />
     <Compile Include="Models\template\AccountModels.cs" />
     <Compile Include="Models\template\LoginModels.cs" />
     <Compile Include="Models\Wishlist.cs" />
@@ -328,6 +330,7 @@
     <Content Include="Views\Home\Films.cshtml" />
     <Content Include="Views\Wishlist\Index.cshtml" />
     <Content Include="Views\Wishlist\Savewishlist.cshtml" />
+    <Content Include="Views\AgendaBlokken\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
