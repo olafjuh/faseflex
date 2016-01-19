@@ -11,10 +11,13 @@ namespace ihff.Controllers
         private ihffContext ctx = new ihffContext();
 
         //mblokken schema
-        public IEnumerable<Activiteit> GetActivities()
+        public IEnumerable<Activities> GetActivities()
         {
+
             return ctx.Activities;
         }
+        
+
         
         //wishlist
         public IEnumerable<Wishlist> GetAllWishlists()
