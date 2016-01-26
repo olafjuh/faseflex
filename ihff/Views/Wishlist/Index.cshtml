@@ -45,11 +45,17 @@
             <tr>
                 <td></td>
                 <td></td>
-                <td>Totaal: </td>
-                <td></td>
-                <td></td>
+                <td>@*@new int totaal; 
+                Totaal: @foreach (var item in Model)
+                                totaal= totaal+item.*@ Totaal:</td>
+                <td>3</td>
+                <td>30,00</td>
             </tr>
         </tbody>
     </table>
+</div>
+<div id="wishlist-buttons">
     @Html.ActionLink("Wishlist Opslaan", "SaveWishlist")
+    @Html.ActionLink("Wishlist Ophalen", "GetWishlist")
+    @Html.ActionLink("Afrekenen", "afrekenen")
 </div>

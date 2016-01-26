@@ -124,6 +124,23 @@ h1, p{
     border-bottom:2px solid #C5C7CA;
 }
 
+ #wishlist-buttons{
+     height:auto;
+    width:auto;
+    background-color:#EB2544;
+    margin-right:25px;
+    margin-left:25px;
+    margin-top:50px;
+    border-radius:15px;
+    padding:10px,10px,10px,10px;
+    color:white;
+
+ }
+ #wishlist-buttons a{
+     color:white;
+     padding-left:100px;
+ }
+
 
 
 

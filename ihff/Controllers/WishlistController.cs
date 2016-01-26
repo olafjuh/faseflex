@@ -15,14 +15,14 @@ namespace ihff.Controllers
 
         public ActionResult Index()
         {
-            //session placeholder
+            //session/items placeholder
             Wishlist wishlist = repository.GetAllWishlists().First();
             Session["active_wishlist"] = wishlist;
 
             //should be filled on final version by films / restaurants.
             Session["active_wishlistitems"] = repository.GetAllItems(wishlist);
 
-            //should load session active_wishlistitems later on.
+            //todo load session active_wishlistitems later on.
             return View((IEnumerable<WishlistItem>)Session["active_wishlistitems"]);
         }
 
@@ -35,7 +35,7 @@ namespace ihff.Controllers
         [HttpPost]
         public ActionResult SaveWishlist(Wishlist wishlist)
         {
-            //add check to see if wishlist is the session wishlist.
+            //todo check to see if wishlist is the session wishlist.
 
             if (ModelState.IsValid)
             {
@@ -51,13 +51,30 @@ namespace ihff.Controllers
             return View(wishlist);
         }
 
-        [HttpPost]
-        public ActionResult NewWishlist()
-        {
-            Session["active_wishlistitems"] = new Wishlist();
+        //[HttpPost]
+        //public ActionResult NewWishlist()
+        //{
+        //    Session["active_wishlist"] = new Wishlist();
+        //    Session["active_wishlistitems"] = new IEnumerable<WishlistItem>();
 
-            return View("Index");
+        //    return View("Index");
+        //}
+
+        public ActionResult GetWishlist()
+        {
+            return View();
         }
 
+        [HttpPost]
+        public ActionResult GetWishlist(Wishlist wishlist)
+        {
+            if (ModelState.IsValid)
+            {
+                Wishlist checkedwishlist = repository.GetWishlist(wishlist.email);
+                Session["active_wishlist"] = checkedwishlist;
+                return RedirectToAction("Index");
+            }
+            return View(wishlist);
+        }
     }
 }

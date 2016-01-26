@@ -14,27 +14,5 @@ namespace ihff.Controllers
 
             return View();
         }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your app description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-
-        public ActionResult Films()
-        {
-            ViewBag.Message = "Film overzicht";
-
-            return View("/Views/Home/Films.cshtml");
-        }
-       
-        }
+    }
 }

@@ -209,9 +209,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\testDB.mdf" />
-    <Content Include="App_Data\testDB_log.ldf">
-      <DependentUpon>testDB.mdf</DependentUpon>
+    <Content Include="App_Data\testDB2.mdf" />
+    <Content Include="App_Data\testDB2_log.ldf">
+      <DependentUpon>testDB2.mdf</DependentUpon>
     </Content>
     <Content Include="Content\themes\base\images\backgroundOne.jpg" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -331,6 +331,7 @@
     <Content Include="Views\Wishlist\Index.cshtml" />
     <Content Include="Views\Wishlist\Savewishlist.cshtml" />
     <Content Include="Views\AgendaBlokken\Index.cshtml" />
+    <Content Include="Views\Wishlist\getwishlist.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

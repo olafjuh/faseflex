@@ -23,6 +23,11 @@ namespace ihff.Controllers
             
         }
 
+        public Wishlist GetWishlist(string email)
+        {
+            return ctx.Wishlists.SingleOrDefault(a => a.email == email);
+        }
+
         public IEnumerable<WishlistItem> GetAllItems(Wishlist wishlist)
         {
             return ctx.WishlistItems.Where(c => c.wishID == wishlist.Id);
