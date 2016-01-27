@@ -7,3 +7,16 @@
 <br />
 <br />
 
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(m => m.name)
+    @Html.TextBoxFor(m => m.name)
+    @Html.ValidationMessageFor(m => m.name)
+    <br />
+    @Html.LabelFor(m => m.type)
+    @Html.TextBoxFor(m => m.type)
+    @Html.ValidationMessageFor(m => m.type)
+    <br />
+    @Html.LabelFor
+    <input type="submit" value="Create Contact" />
+}
