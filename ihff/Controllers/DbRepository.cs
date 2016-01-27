@@ -9,11 +9,11 @@ namespace ihff.Controllers
     public class DbRepository
     {
         private ihffContext ctx = new ihffContext();
+        public IEnumerable<WishlistItem> films;
 
         //mblokken schema
-        public IEnumerable<Activities> GetActivities()
+        public IEnumerable<Activity> GetActivities()
         {
-
             return ctx.Activities;
         }
         
@@ -58,5 +58,23 @@ namespace ihff.Controllers
         //remove activity to wishlist
 
         //edit activity in wishlist
+
+
+        //----------------FILMS
+
+        public List<Activity> GetAllFilms()
+        {
+            List<Activity> films = new List<Activity>();
+            foreach(var i in ctx.Activities)
+            {
+                films.Add(i);
+            }
+            return films;
+        }
+
+        public Activity GetFilm(int id)
+        {
+            return ctx.Activities.SingleOrDefault(c => c.Id == id);
+        }
     }
 }

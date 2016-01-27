@@ -19,9 +19,9 @@ namespace ihff.Controllers
 
         public ActionResult Index()
         {
-            IEnumerable<Activities> activities = repository.GetActivities();
+            IEnumerable<Activity> activities = repository.GetActivities();
             //IEnumerable<string> allLocations;
-            Activitieswednesday activitieswednesday = new Activitieswednesday(activities , 1);
+            ihff.Models.Activitywednesday activitieswednesday = new Activitywednesday(activities, 1);
             return View(activitieswednesday);
 
 

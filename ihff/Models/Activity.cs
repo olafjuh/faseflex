@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ihff.Models
 {
-    public class Activities
+    public class Activity
     {
         public int Id { get; set; }
         public string name { get; set; }
@@ -18,7 +18,7 @@ namespace ihff.Models
         public int seats { get; set; }
         public int? seatsReserved { get; set; }
 
-        public Activities(string name, string type, DateTime startTime, DateTime endTime, string location, int seats, int seatsReserved)
+        public Activity(string name, string type, DateTime startTime, DateTime endTime, string location, int seats, int seatsReserved)
         {
             this.Id = Id;
             this.name = name;
@@ -30,7 +30,7 @@ namespace ihff.Models
             this.seatsReserved = seatsReserved;
         }
 
-        public Activities()
+        public Activity()
         {
 
         }

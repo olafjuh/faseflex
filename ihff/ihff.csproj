@@ -192,6 +192,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AgendaBlokkenController.cs" />
     <Compile Include="Controllers\DbRepository.cs" />
+    <Compile Include="Controllers\FilmsController.cs" />
     <Compile Include="Controllers\ihffContext.cs" />
     <Compile Include="Controllers\template\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -201,7 +202,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Activities.cs" />
+    <Compile Include="Models\Activity.cs" />
     <Compile Include="Models\Activitieswednesday.cs" />
     <Compile Include="Models\template\AccountModels.cs" />
     <Compile Include="Models\template\LoginModels.cs" />
@@ -336,6 +337,8 @@
     <Content Include="Views\Wishlist\Savewishlist.cshtml" />
     <Content Include="Views\AgendaBlokken\Index.cshtml" />
     <Content Include="Views\Wishlist\getwishlist.cshtml" />
+    <Content Include="Views\Films\Index.cshtml" />
+    <Content Include="Views\Films\AddItem.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -345,7 +348,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Diners\" />
-    <Folder Include="Views\Films\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

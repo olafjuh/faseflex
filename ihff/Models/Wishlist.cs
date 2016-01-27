@@ -15,7 +15,7 @@ namespace ihff.Models
         public string email { get; set; }
         public bool paid { get; set; }
 
-       
+        public List<WishlistItem> wishlistItems = new List<WishlistItem>();
 
         public Wishlist()
         {
