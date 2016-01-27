@@ -1,0 +1,12 @@
+﻿@model List<ihff.Models.Activity>
+@{
+    ViewBag.Title = "Index";
+}
+<div class="Films">
+@foreach (var i in @Model)
+{
+    <div class="Film-item">
+        @i.name @Html.ActionLink("Add to wishlist", "AddItem", new {Id = i.Id });
+    </div>
+}
+    </div>

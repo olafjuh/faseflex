@@ -10,13 +10,19 @@
 @using (Html.BeginForm())
 {
     @Html.LabelFor(m => m.name)
-    @Html.TextBoxFor(m => m.name)
-    @Html.ValidationMessageFor(m => m.name)
     <br />
     @Html.LabelFor(m => m.type)
-    @Html.TextBoxFor(m => m.type)
-    @Html.ValidationMessageFor(m => m.type)
     <br />
-    @Html.LabelFor
-    <input type="submit" value="Create Contact" />
+    @Html.LabelFor(m => m.location)
+    <br />
+    @Html.LabelFor(m => m.startTime)
+    <br />
+    @Html.LabelFor(m => m.endTime)
+    <br />
+    @Html.LabelFor(m => m.persons)
+    @Html.TextBoxFor(m => m.persons)
+    @Html.ValidationMessageFor(m => m.persons)
+    <br />
+    
+    <input type="submit" value="AddItem" />
 }
