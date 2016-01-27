@@ -1,0 +1,37 @@
+﻿@model ihff.Models.WishlistItem
+@{
+    ViewBag.Title = "EditItem";
+}
+
+@using (Html.BeginForm())
+    {
+        @Html.LabelFor(m => m.name)
+        @Html.TextBoxFor(m => m.name)
+        @Html.ValidationMessageFor(m => m.name)
+    <br />
+        @Html.LabelFor(m => m.type)
+        @Html.TextBoxFor(m => m.type)
+        @Html.ValidationMessageFor(m => m.type)
+    <br />
+        @Html.LabelFor(m => m.location)
+        @Html.TextBoxFor(m => m.location)
+        @Html.ValidationMessageFor(m => m.location)
+    <br />
+        @Html.LabelFor(m => m.startTime)
+        @Html.TextBoxFor(m => m.startTime)
+        @Html.ValidationMessageFor(m => m.startTime)
+    <br />
+        @Html.LabelFor(m => m.endTime)
+        @Html.TextBoxFor(m => m.endTime)
+        @Html.ValidationMessageFor(m => m.endTime)
+    <br />
+        @Html.LabelFor(m => m.persons)
+        @Html.TextBoxFor(m => m.persons)
+        @Html.ValidationMessageFor(m => m.persons)
+    <br />
+        @Html.HiddenFor(m => m.actID)
+        @Html.HiddenFor(m => m.Id)
+
+
+        <input type="submit" value="Wishlist item wijzigen" />
+    }
