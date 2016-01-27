@@ -47,8 +47,8 @@ namespace ihff.Controllers
                 wishlist.wishlistItems.Add(wishlistItem);
                 Session["active_wishlist"] = wishlist;
             }
-            
-            return View();
+
+            return RedirectToAction("Index", "Wishlist");
         }
         // check
     }

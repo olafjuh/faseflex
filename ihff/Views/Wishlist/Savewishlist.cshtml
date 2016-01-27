@@ -6,11 +6,14 @@
 @using (Html.BeginForm())
 {
     @Html.LabelFor(m => m.Id)
+    @Html.HiddenFor(m => m.Id)
+    @Html.ValueFor(m => m.Id)
     @Html.LabelFor(m => m.email)
     <br />
     @Html.TextBoxFor(m => m.email)
     @Html.ValidationMessageFor(m => m.email)
     <br />
+    @Html.HiddenFor(m => m.wishlistItems)
     <input type="submit" value="Save Wishlist" />
 }
 

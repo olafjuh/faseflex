@@ -15,32 +15,40 @@ namespace ihff.Controllers
 
         public ActionResult Index()
         {
-            Wishlist wishlist = (Wishlist)Session["active_wishlist"];
+            if (Session["active_wishlist"] == null)
+            {
+                Wishlist nwWishlist = new Wishlist();
+                Session["active_wishlist"] = nwWishlist;
+                return View(nwWishlist);
 
-            return View(wishlist.wishlistItems);
+            }
+            Wishlist wishlist = (Wishlist)Session["active_wishlist"];
+            return View(wishlist);
+            
+            
         }
 
         public ActionResult SaveWishlist()
         {
             Wishlist wishlist = (Wishlist)Session["active_wishlist"];
+            wishlist.Id = repository.GetNewId();
             return View(wishlist);
         }
 
         [HttpPost]
         public ActionResult SaveWishlist(Wishlist wishlist)
         {
-            //todo check to see if wishlist is the session wishlist.
+            Wishlist sessionWishlist = (Wishlist)Session["active_wishlist"];
+            wishlist.wishlistItems = sessionWishlist.wishlistItems;
+            foreach (var i in wishlist.wishlistItems)
+            {
+                i.wishID = wishlist.Id;
+            }
 
             if (ModelState.IsValid)
             {
                 repository.SaveWishlist(wishlist);
-
-                IEnumerable<WishlistItem> wishlistItems = (IEnumerable<WishlistItem>)Session["active_wishlistitems"];
-                foreach (var item in wishlistItems)
-                    item.wishID = wishlist.Id;
-                repository.SaveWishlistItems(wishlistItems);
-
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Wishlist");
             }
             return View(wishlist);
         }
@@ -62,13 +70,26 @@ namespace ihff.Controllers
         [HttpPost]
         public ActionResult GetWishlist(Wishlist wishlist)
         {
-            if (ModelState.IsValid)
-            {
+            //if (ModelState.IsValid)
+            //{
                 Wishlist checkedwishlist = repository.GetWishlist(wishlist.email);
                 Session["active_wishlist"] = checkedwishlist;
                 return RedirectToAction("Index");
+            //}
+            //return View(wishlist);
+        }
+
+        public ActionResult NewWishlist()
+        {
+            if (Session["active_wishlist"] == null)
+            {
+                return RedirectToAction("Index");
             }
-            return View(wishlist);
+            else
+            {
+                Session["active_wishlist"] = null;
+                return RedirectToAction("Index");
+            }
         }
     }
 }

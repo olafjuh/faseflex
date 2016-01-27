@@ -14,7 +14,7 @@ namespace ihff.Controllers
             Database.SetInitializer<ihffContext>(null);
         }
 
-         public DbSet<ihff.Models.Activity> Activities { get; set; }
+        public DbSet<ihff.Models.Activity> Activities { get; set; }
         public DbSet<ihff.Models.WishlistItem> WishlistItems { get; set; }
         public DbSet<ihff.Models.Wishlist> Wishlists { get; set; }
 

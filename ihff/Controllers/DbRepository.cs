@@ -28,7 +28,10 @@ namespace ihff.Controllers
 
         public Wishlist GetWishlist(string email)
         {
-            return ctx.Wishlists.SingleOrDefault(a => a.email == email);
+            Wishlist wishlist = ctx.Wishlists.Where(m => m.email == email).First();
+            wishlist.wishlistItems = ctx.WishlistItems.Where(i => i.wishID == wishlist.Id).ToList();
+            
+            return wishlist;
         }
 
         public IEnumerable<WishlistItem> GetAllItems(Wishlist wishlist)
@@ -40,13 +43,20 @@ namespace ihff.Controllers
         {
             ctx.Wishlists.Add(wishlist);
             ctx.SaveChanges();
+            foreach(var item in wishlist.wishlistItems)
+            {
+                item.wishID = wishlist.Id;
+                ctx.WishlistItems.Add(item);
+            }
+            ctx.SaveChanges();
         }
 
-        public void SaveWishlistItems(IEnumerable<WishlistItem> wishlistItems)
+        public int GetNewId()
         {
-            foreach (var item in wishlistItems)
-            ctx.WishlistItems.Add(item);
-            ctx.SaveChanges();
+            Wishlist lastwishlist = ctx.Wishlists.OrderByDescending(u => u.Id).FirstOrDefault();
+            int b = lastwishlist.Id;
+            b = b + 1;
+            return b;
         }
 
         //save wishlist

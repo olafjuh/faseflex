@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
 
 namespace ihff.Models
 {
@@ -10,8 +11,12 @@ namespace ihff.Models
         public int Id { get; set; }
         public int wishID { get; set; }
         public int actID { get; set; }
+
+        [Required(ErrorMessage = "Aantal personen is een verplicht veld.")]
+        [Display(Name = "Aantal personen: ")]
         public int persons { get; set; }
         public string name { get; set; }
+
         public string type { get; set; }
         public DateTime startTime { get; set; }
         public DateTime endTime { get; set; }

@@ -10,19 +10,32 @@
 @using (Html.BeginForm())
 {
     @Html.LabelFor(m => m.name)
+    @Html.ValueFor(m => m.name)
+    @Html.HiddenFor(m => m.name)
     <br />
     @Html.LabelFor(m => m.type)
+    @Html.ValueFor(m => m.type)
+    @Html.HiddenFor(m => m.type)
     <br />
     @Html.LabelFor(m => m.location)
+    @Html.ValueFor(m => m.location)
+    @Html.HiddenFor(m => m.location)
     <br />
     @Html.LabelFor(m => m.startTime)
+    @Html.ValueFor(m => m.startTime)
+    @Html.HiddenFor(m => m.startTime)
     <br />
     @Html.LabelFor(m => m.endTime)
+    @Html.ValueFor(m => m.endTime)
+    @Html.HiddenFor(m => m.endTime)
     <br />
     @Html.LabelFor(m => m.persons)
     @Html.TextBoxFor(m => m.persons)
     @Html.ValidationMessageFor(m => m.persons)
     <br />
+    @Html.HiddenFor(m => m.actID)
+    @Html.HiddenFor(m => m.Id)
+    
     
     <input type="submit" value="AddItem" />
 }

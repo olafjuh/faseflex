@@ -6,12 +6,11 @@
 <h2>getwishlist</h2>
 
 @using (Html.BeginForm())
-{
-    @Html.LabelFor(m => m.Id)
+{    
     @Html.LabelFor(m => m.email)
     <br />
     @Html.TextBoxFor(m => m.email)
     @Html.ValidationMessageFor(m => m.email)
     <br />
-    <input type="submit" value="Save Wishlist" />
+    <input type="submit" value="Haal wishlist op." />
 }

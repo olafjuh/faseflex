@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ihff.Models.WishlistItem>
+﻿@model ihff.Models.Wishlist
 
 <h1>Wishlist</h1>
 
@@ -14,17 +14,14 @@
            </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model)
+            @foreach (var item in Model.wishlistItems)
             {
                 <tr>
                     <td>@item.name</td>
                     <td>@item.location</td>
                     <td>@item.startTime</td>
                     <td>@item.persons</td>
-                    @if(item.type == "Movie")
-                    {
-                        <td>10,00</td>
-                    }
+                    <td></td>
                 </tr>
             }
            <tr>
@@ -33,13 +30,14 @@
                 <td>@*@new int totaal; 
                 Totaal: @foreach (var item in Model)
                                 totaal= totaal+item.*@ Totaal:</td>
-                <td>3</td>
+                <td></td>
                 <td>30,00</td>
             </tr>
         </tbody>
     </table>
 </div>
 <div id="wishlist-buttons">
+    @Html.ActionLink("Nieuwe Wishlist", "NewWishlist")
     @Html.ActionLink("Wishlist Opslaan", "SaveWishlist")
     @Html.ActionLink("Wishlist Ophalen", "GetWishlist")
     @Html.ActionLink("Afrekenen", "afrekenen")
