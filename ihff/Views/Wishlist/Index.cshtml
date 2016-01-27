@@ -21,7 +21,7 @@
                     <td>@item.location</td>
                     <td>@item.startTime</td>
                     <td>@item.persons</td>
-                    <td>@Html.ActionLink("Aanpassen", "EditItem", new {id = item.Id})</td>
+                    <td></td> @Html.ActionLink("Aanpassen", "EditItem", new { id = item.Id }) @Html.ActionLink("Verwijderen", "RemoveItem", new { id = item.Id})
                 </tr>
             }
            <tr>
