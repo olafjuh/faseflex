@@ -21,7 +21,7 @@ namespace ihff.Controllers
         {
             IEnumerable<Activity> activities = repository.GetActivities();
             //IEnumerable<string> allLocations;
-            ihff.Models.Activitywednesday activitieswednesday = new Activitywednesday(activities, 1);
+            ihff.Models.ActivitiesPerLocation activitieswednesday = new ActivitiesPerLocation(activities, 1);
             return View(activitieswednesday);
 
 

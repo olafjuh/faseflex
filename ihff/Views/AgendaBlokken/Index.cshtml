@@ -1,5 +1,5 @@
 ﻿@using ihff.Models
-@model Activitieswednesday
+@Model ActivitiesPerLocation
 
 <h1>Blokken schema</h1>
 
@@ -12,7 +12,7 @@
         <tbody>
     <tr>
         <th>Pathe zaal 1</th>
-        @foreach (var activity in Model.activitiesPatheZaal1)
+        @foreach (var activity in Model.ActivityPatheZaal1)
         {
             //link naar detailpagina film
             <td>
@@ -21,13 +21,14 @@
                 @activity.startTime.TimeOfDay <br />
                 @activity.endTime.TimeOfDay <br />
                 @activity.location <br />
+                @Html.ActionLink("Add to wishlist", "AddItem", new { Id = activity.Id });
             </td>
 
         }
     </tr>
             <tr>
                 <th>Pathe zaal 9</th>
-                @foreach (var activity in Model.activitiesPatheZaal9)
+                @foreach (var activity in Model.ActivityPatheZaal9)
                 {
                     //link naar detailpagina film
                     <td>
@@ -41,7 +42,7 @@
             </tr>
             <tr>
                 <th>Pathe zaal 13</th>
-                @foreach (var activity in Model.activitiesPatheZaal13)
+                @foreach (var activity in Model.ActivityPatheZaal13)
                 {
                     //link naar detailpagina film
                     <td>
@@ -54,7 +55,65 @@
                 }
             </tr>
 
+            <tr>
+                <th>Philharmonie Van Beinum zaal</th>
+                @foreach (var activity in Model.philharmonieVanBeinumZaal)
+                {
+                    //link naar detailpagina film
+                    <td>
+                        @activity.name <br />
+                        @activity.type <br />
+                        @activity.startTime.TimeOfDay <br />
+                        @activity.endTime.TimeOfDay <br />
+                        @activity.location <br />
+                    </td>
+                }
+            </tr>
 
+            <tr>
+                <th>Philharmonie Artiestenfoyer</th>
+                @foreach (var activity in Model.PhilharmonieArtiestenfoyer)
+                {
+                    //link naar detailpagina film
+                    <td>
+                        @activity.name <br />
+                        @activity.type <br />
+                        @activity.startTime.TimeOfDay <br />
+                        @activity.endTime.TimeOfDay <br />
+                        @activity.location <br />
+                    </td>
+                }
+            </tr>
+
+            <tr>
+                <th>Toneelschuur Filmzaal 1</th>
+                @foreach (var activity in Model.toneelschuurFilmzaal1)
+                {
+                    //link naar detailpagina film
+                    <td>
+                        @activity.name <br />
+                        @activity.type <br />
+                        @activity.startTime.TimeOfDay <br />
+                        @activity.endTime.TimeOfDay <br />
+                        @activity.location <br />
+                    </td>
+                }
+            </tr>
+
+            <tr>
+                <th>Toneelschuur Filmzaal 2</th>
+                @foreach (var activity in Model.toneelschuurFilmzaal2)
+                {
+                    //link naar detailpagina film
+                    <td>
+                        @activity.name <br />
+                        @activity.type <br />
+                        @activity.startTime.TimeOfDay <br />
+                        @activity.endTime.TimeOfDay <br />
+                        @activity.location <br />
+                    </td>
+                }
+            </tr>
 
 
 </tbody>
