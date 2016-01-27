@@ -15,15 +15,9 @@ namespace ihff.Controllers
 
         public ActionResult Index()
         {
-            //session/items placeholder
-            Wishlist wishlist = repository.GetAllWishlists().First();
-            Session["active_wishlist"] = wishlist;
+            Wishlist wishlist = (Wishlist)Session["active_wishlist"];
 
-            //should be filled on final version by films / restaurants.
-            Session["active_wishlistitems"] = repository.GetAllItems(wishlist);
-
-            //todo load session active_wishlistitems later on.
-            return View((IEnumerable<WishlistItem>)Session["active_wishlistitems"]);
+            return View(wishlist.wishlistItems);
         }
 
         public ActionResult SaveWishlist()
