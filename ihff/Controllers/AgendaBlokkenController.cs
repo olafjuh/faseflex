@@ -21,7 +21,8 @@ namespace ihff.Controllers
         {
             IEnumerable<Activity> activities = repository.GetActivities();
             //IEnumerable<string> allLocations;
-            ihff.Models.ActivitiesPerLocation activitieswednesday = new ActivitiesPerLocation(activities, 1);
+            int dayOfTheYearFirstday = activities.First().startTime.DayOfYear;
+            ihff.Models.ActivitiesPerLocation activitieswednesday = new ActivitiesPerLocation(activities, dayOfTheYearFirstday);
             return View(activitieswednesday);
 
 
