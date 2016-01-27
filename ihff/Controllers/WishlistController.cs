@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Web.Security;
 using System.Data.Entity;
 using ihff.Models;
+using System.Web.Routing;
 
 namespace ihff.Controllers
 {
@@ -90,6 +91,23 @@ namespace ihff.Controllers
                 Session["active_wishlist"] = null;
                 return RedirectToAction("Index");
             }
+        }
+        public ActionResult EditItem(int id)
+        {
+            return View("EditItem", repository.GetWishlistItem(id));
+        }
+
+        [HttpPost]
+        public ActionResult EditItem(WishlistItem wishlistItem)
+        {
+            Wishlist wishlist = (Wishlist)Session["active_wishlist"];
+            WishlistItem oldWishlistItem = wishlist.wishlistItems.SingleOrDefault(c => c.Id == wishlistItem.Id);
+            wishlist.wishlistItems.Remove(oldWishlistItem);
+            wishlist.wishlistItems.Add(wishlistItem);
+            wishlist.Id++;
+            Session["active_wishlist"] = wishlist;
+
+            return RedirectToAction("Index");
         }
     }
 }

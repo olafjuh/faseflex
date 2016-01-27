@@ -340,6 +340,7 @@
     <Content Include="Views\Wishlist\getwishlist.cshtml" />
     <Content Include="Views\Films\Index.cshtml" />
     <Content Include="Views\Films\AddItem.cshtml" />
+    <Content Include="Views\Wishlist\EditItem.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

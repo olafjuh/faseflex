@@ -21,7 +21,7 @@
                     <td>@item.location</td>
                     <td>@item.startTime</td>
                     <td>@item.persons</td>
-                    <td></td>
+                    <td>@Html.ActionLink("Aanpassen", "EditItem", new {id = item.Id})</td>
                 </tr>
             }
            <tr>

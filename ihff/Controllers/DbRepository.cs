@@ -59,6 +59,12 @@ namespace ihff.Controllers
             return b;
         }
 
+        public WishlistItem GetWishlistItem(int id)
+        {
+            WishlistItem wishlistItem = ctx.WishlistItems.SingleOrDefault(c => c.Id == id);
+            return wishlistItem;
+        }
+
         //save wishlist
 
         //delete wishlist
