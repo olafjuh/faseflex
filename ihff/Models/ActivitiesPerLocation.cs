@@ -4,9 +4,10 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+
 namespace ihff.Models
 {
-    public class Activitywednesday
+    public class ActivitiesPerLocation
     {
         public List<Activity> ActivityPatheZaal1 { get; set; }
         public List<Activity> ActivityPatheZaal9 { get; set; }
@@ -16,10 +17,11 @@ namespace ihff.Models
         public List<Activity> philharmonieKleineZaal { get; set; }
         public List<Activity> toneelschuurFilmzaal1 { get; set; }
         public List<Activity> toneelschuurFilmzaal2 { get; set; }
+        public List<Activity> partonaatKleinezaal { get; set; }
 
 
         //activiteiten dag meegeven in constructor ipv hard coded
-        public Activitywednesday(IEnumerable<Activity> activiteiten, int dayOfTheYear)
+        public ActivitiesPerLocation(IEnumerable<Activity> activiteiten, int dayOfTheYear)
         {
             ActivityPatheZaal1 = new List<Activity>();
             ActivityPatheZaal9 = new List<Activity>();
@@ -29,6 +31,7 @@ namespace ihff.Models
             philharmonieKleineZaal = new List<Activity>();
             toneelschuurFilmzaal1 = new List<Activity>();
             toneelschuurFilmzaal2 = new List<Activity>();
+            partonaatKleinezaal = new List<Activity>();
             foreach (Activity x in activiteiten)
             {
                 //loactie id in db beter
@@ -40,16 +43,16 @@ namespace ihff.Models
                 {
                     switch (x.location)
                     {
-                        case "Pathe Zaal 1":
+                        case "Pathé - zaal 1":
                             ActivityPatheZaal1.Add(x);
                             break;
-                        case "Pathe Zaal 9":
+                        case "Pathé - zaal 9":
                             ActivityPatheZaal9.Add(x);
                             break;
-                        case "Pathe Zaal 13":
+                        case "Pathé - zaal 13":
                             ActivityPatheZaal13.Add(x);
                             break;
-                        case "Philharmonie Van Beinum zaal":
+                        case "Philharmonie - van Beinum Zaal":
                             philharmonieVanBeinumZaal.Add(x);
                             break;
                         case "Philharmonie Artiestenfoyer":
@@ -64,6 +67,10 @@ namespace ihff.Models
                         case "Toneelschuur Filmzaal 2":
                             toneelschuurFilmzaal2.Add(x);
                             break;
+                        case "Patronaat – Kleine zaal":
+                            partonaatKleinezaal.Add(x);
+                            break;
+
                         default:
                             break;
 
@@ -75,7 +82,7 @@ namespace ihff.Models
 
         }
 
-        public Activitywednesday()
+        public ActivitiesPerLocation()
         {
 
         }

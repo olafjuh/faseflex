@@ -18,10 +18,12 @@
             <td>
                 @activity.name <br />
                 @activity.type <br />
-                @activity.startTime.TimeOfDay <br />
-                @activity.endTime.TimeOfDay <br />
+                @activity.startTime.ToString("HH:mm") <br />
+                @activity.endTime.ToString("HH:mm")<br />
                 @activity.location <br />
-                @Html.ActionLink("Add to wishlist", "AddItem", new { Id = activity.Id });
+                @Html.ActionLink("Add to wishlist", "AddItem", "Films", new { Id = activity.Id }, null)
+
+
             </td>
 
         }
@@ -34,7 +36,7 @@
                     <td>
                         @activity.name <br />
                         @activity.type <br />
-                        @activity.startTime.TimeOfDay <br />
+                        @activity.startTime.ToString("hh:mm") <br />
                         @activity.endTime.TimeOfDay <br />
                         @activity.location <br />
                     </td>
