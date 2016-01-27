@@ -65,6 +65,14 @@ namespace ihff.Controllers
             return wishlistItem;
         }
 
+        public void RemoveWishlistItem(WishlistItem wishlistItem)
+        {
+            List<WishlistItem> toBeRemoved = ctx.WishlistItems.Where(c => c.Id == wishlistItem.Id).ToList();
+            foreach(var i in toBeRemoved)
+            ctx.WishlistItems.Remove(i);
+            ctx.SaveChanges();
+        }
+
         //save wishlist
 
         //delete wishlist

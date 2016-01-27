@@ -114,6 +114,7 @@ namespace ihff.Controllers
         {
             Wishlist wishlist = (Wishlist)Session["active_wishlist"];
             wishlist.wishlistItems.Remove(wishlist.wishlistItems.SingleOrDefault(c => c.Id == id));
+            repository.RemoveWishlistItem(repository.GetWishlistItem(id));
             Session["active_wishlist"] = wishlist;
             return RedirectToAction("Index");
         }
