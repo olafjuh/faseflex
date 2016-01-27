@@ -109,5 +109,13 @@ namespace ihff.Controllers
 
             return RedirectToAction("Index");
         }
+
+        public ActionResult RemoveItem(int id)
+        {
+            Wishlist wishlist = (Wishlist)Session["active_wishlist"];
+            wishlist.wishlistItems.Remove(wishlist.wishlistItems.SingleOrDefault(c => c.Id == id));
+            Session["active_wishlist"] = wishlist;
+            return RedirectToAction("Index");
+        }
     }
 }
