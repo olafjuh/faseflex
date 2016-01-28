@@ -81,22 +81,9 @@ namespace ihff.Controllers
         
         public void SaveWishlist(Wishlist wishlist)
         {
-            if (!((ctx.Wishlists.Where(c => c.email == wishlist.email) == null)))
-            {
-                IEnumerable<Wishlist> oldWishlists = ctx.Wishlists.Where(c => c.email == wishlist.email).ToList();
-                foreach (var i in oldWishlists)
-                    ctx.Wishlists.Remove(i);
-
-                ctx.Wishlists.Add(wishlist);
-                ctx.SaveChanges();
-            }
-            else
-            {
-                ctx.Wishlists.Add(wishlist);
-                ctx.SaveChanges();
-            }
-            
-            foreach(var item in wishlist.wishlistItems)
+            ctx.Wishlists.Add(wishlist);
+            ctx.SaveChanges();
+            foreach (var item in wishlist.wishlistItems)
             {
                 item.wishID = wishlist.Id;
                 ctx.WishlistItems.Add(item);
@@ -116,6 +103,14 @@ namespace ihff.Controllers
         {
             WishlistItem wishlistItem = ctx.WishlistItems.SingleOrDefault(c => c.Id == id);
             return wishlistItem;
+        }
+
+        public void RemoveWishlistItem(WishlistItem wishlistItem)
+        {
+            List<WishlistItem> toBeRemoved = ctx.WishlistItems.Where(c => c.Id == wishlistItem.Id).ToList();
+            foreach(var i in toBeRemoved)
+            ctx.WishlistItems.Remove(i);
+            ctx.SaveChanges();
         }
 
         //save wishlist
