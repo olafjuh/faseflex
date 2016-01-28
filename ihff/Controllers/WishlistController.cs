@@ -54,15 +54,6 @@ namespace ihff.Controllers
             return View(wishlist);
         }
 
-        //[HttpPost]
-        //public ActionResult NewWishlist()
-        //{
-        //    Session["active_wishlist"] = new Wishlist();
-        //    Session["active_wishlistitems"] = new IEnumerable<WishlistItem>();
-
-        //    return View("Index");
-        //}
-
         public ActionResult GetWishlist()
         {
             return View();

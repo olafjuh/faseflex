@@ -55,11 +55,8 @@ namespace ihff.Controllers
             }
             return allLocations;
         }
-       
-
-
-
-        //wishlist
+        
+        //-------------------------------------------------wishlist
         public IEnumerable<Wishlist> GetAllWishlists()
         {
             return ctx.Wishlists;
@@ -112,17 +109,6 @@ namespace ihff.Controllers
             ctx.WishlistItems.Remove(i);
             ctx.SaveChanges();
         }
-
-        //save wishlist
-
-        //delete wishlist
-
-        //add activity to wishlist
-        
-        //remove activity to wishlist
-
-        //edit activity in wishlist
-
 
         //----------------FILMS
 

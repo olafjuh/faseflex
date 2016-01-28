@@ -55,6 +55,5 @@ namespace ihff.Controllers
             return View(wishlistItem);
             
         }
-        // check
     }
 }
