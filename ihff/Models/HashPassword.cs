@@ -20,11 +20,11 @@ namespace ihff.Models
             {
                 throw new ArgumentNullException("password");
             }
-            //Rfc2898DeriveBytes is an implementation of PBKDF2 (a Key Derivation Function)
+            //Rfc2898DeriveBytes is an implementation of PBKDF2 ( Key Derivation Function)
             //wilekeurige lengte passwords
             // random. dus zelft string waarde maar andere paswords.
             // meer iteraraties = langer te doen om alle mogelijheden van 1 pasword te maken.
-            //
+            // 0x3e8 == 1000 iteraties0x10= 16
             using (Rfc2898DeriveBytes bytes = new Rfc2898DeriveBytes(password, 0x10, 0x3e8))
             {
                 salt = bytes.Salt;
