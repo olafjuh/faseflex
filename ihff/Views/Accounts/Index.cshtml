@@ -1,0 +1,29 @@
+﻿@model IEnumerable<ihff.Models.Activity>
+
+@Html.ActionLink("Register", "AddAccount", "Accounts");
+@Html.ActionLink("Login", "Login", "Accounts");
+<h2>Welkom</h2>
+
+<div id="wishlist-wrapper">
+    <table id="wishlist-table">
+        <thead>
+            <tr>
+                <th>Activiteit</th>
+                <th>Locatie</th>
+                <th>Start/eind tijd</th>
+                <th>aantal stoelen gereserveerd</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.name</td>
+                    <td>@item.location</td>
+                    <td>@item.startTime - @item.endTime</td>
+                    <td>@item.seatsReserved / @item.seats</td>
+                </tr>
+            }
+</table>
+</div>

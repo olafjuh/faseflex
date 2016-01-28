@@ -25,8 +25,15 @@ namespace ihff.Controllers
             int dayOfTheYearFirstday = activities.First().startTime.DayOfYear;
             ActivitiesPerLocation activitieswednesday = new ActivitiesPerLocation(activities, dayOfTheYearFirstday, locations);
             return View(activitieswednesday);
-
-
+        }
+        public ActionResult AgendaOfADay(int day)
+        {
+            IEnumerable<Activity> activities = repository.GetActivities();
+            int dayOfTheYearFirstday = activities.First().startTime.DayOfYear;
+            int dayoftheyear = +day;
+            IEnumerable<string> locations = repository.GetLocations();
+            ActivitiesPerLocation activitiesOfAday = new ActivitiesPerLocation(activities, dayoftheyear, locations);
+            return View(activitiesOfAday);
         }
 
     }
