@@ -9,77 +9,27 @@ namespace ihff.Models
 {
     public class ActivitiesPerLocation
     {
-        public List<Activity> ActivityPatheZaal1 { get; set; }
-        public List<Activity> ActivityPatheZaal9 { get; set; }
-        public List<Activity> ActivityPatheZaal13 { get; set; }
-        public List<Activity> philharmonieVanBeinumZaal { get; set; }
-        public List<Activity> PhilharmonieArtiestenfoyer { get; set; }
-        public List<Activity> philharmonieKleineZaal { get; set; }
-        public List<Activity> toneelschuurFilmzaal1 { get; set; }
-        public List<Activity> toneelschuurFilmzaal2 { get; set; }
-        public List<Activity> partonaatKleinezaal { get; set; }
+        public List<List<Activity>> MasterList { get; set; }
+        public IEnumerable<string> locations { get; set; }
 
 
         //activiteiten dag meegeven in constructor ipv hard coded
-        public ActivitiesPerLocation(IEnumerable<Activity> activiteiten, int dayOfTheYear)
+        public ActivitiesPerLocation(IEnumerable<Activity> activiteiten, int dayOfTheYear, IEnumerable<string> locations)
         {
-            ActivityPatheZaal1 = new List<Activity>();
-            ActivityPatheZaal9 = new List<Activity>();
-            ActivityPatheZaal13 = new List<Activity>();
-            philharmonieVanBeinumZaal = new List<Activity>();
-            PhilharmonieArtiestenfoyer = new List<Activity>();
-            philharmonieKleineZaal = new List<Activity>();
-            toneelschuurFilmzaal1 = new List<Activity>();
-            toneelschuurFilmzaal2 = new List<Activity>();
-            partonaatKleinezaal = new List<Activity>();
-            foreach (Activity x in activiteiten)
+            this.locations = locations;
+            MasterList = new List<List<Activity>>();
+            for (int i = 0; i < locations.Count(); i++)
             {
-                //loactie id in db beter
-                /*if (locatie == "Pathe Zaal 1" && dag == x.startTime.DayOfYear)
+                List<Activity> sublist = new List<Activity>();
+                foreach (Activity activitys in activiteiten)
                 {
-                    ActivityPatheZaal1.Add(x);
-                }*/
-                if (dayOfTheYear == x.startTime.DayOfYear)
-                {
-                    switch (x.location)
+                    if (activitys.location == locations.ElementAt(i))
                     {
-                        case "Pathé - zaal 1":
-                            ActivityPatheZaal1.Add(x);
-                            break;
-                        case "Pathé - zaal 9":
-                            ActivityPatheZaal9.Add(x);
-                            break;
-                        case "Pathé - zaal 13":
-                            ActivityPatheZaal13.Add(x);
-                            break;
-                        case "Philharmonie - van Beinum Zaal":
-                            philharmonieVanBeinumZaal.Add(x);
-                            break;
-                        case "Philharmonie Artiestenfoyer":
-                            PhilharmonieArtiestenfoyer.Add(x);
-                            break;
-                        case "Philharmonie Kleine zaal":
-                            philharmonieKleineZaal.Add(x);
-                            break;
-                        case "Toneelschuur Filmzaal 1":
-                            toneelschuurFilmzaal1.Add(x);
-                            break;
-                        case "Toneelschuur Filmzaal 2":
-                            toneelschuurFilmzaal2.Add(x);
-                            break;
-                        case "Patronaat – Kleine zaal":
-                            partonaatKleinezaal.Add(x);
-                            break;
-
-                        default:
-                            break;
-
-
+                        sublist.Add(activitys);
+                        MasterList.Add(sublist);
                     }
                 }
             }
-
-
         }
 
         public ActivitiesPerLocation()
