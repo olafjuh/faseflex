@@ -16,9 +16,24 @@ namespace ihff.Controllers
         {
             return ctx.Activities;
         }
-        
+        public IEnumerable<string> GetLocations()
+        {
+            List<string> allLocations = new List<string>();
+            IEnumerable<Activity> activities = GetActivities();
+            foreach (Activity acti in activities)
+            {
+                if (!allLocations.Contains(acti.location))
+                {
+                    allLocations.Add(acti.location);
+                }
+                
+            }
+            return allLocations;
+        }
+       
 
-        
+
+
         //wishlist
         public IEnumerable<Wishlist> GetAllWishlists()
         {

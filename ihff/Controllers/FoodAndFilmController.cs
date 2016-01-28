@@ -9,7 +9,7 @@ using ihff.Models;
 
 namespace ihff.Controllers
 {
-    public class AgendaBlokkenController : Controller
+    public class FoodAndFilmController : Controller
     {
         //
         // GET: /AgendaBlokken/

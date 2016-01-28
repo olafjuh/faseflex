@@ -1,5 +1,5 @@
 ﻿@using ihff.Models
-@Model ActivitiesPerLocation
+@model ActivitiesPerLocation
 
 <h1>Blokken schema</h1>
 
@@ -7,121 +7,37 @@
 <div id="wishlist-wrapper">
     <table id="wishlist-table">
         <thead>
-            
+
         </thead>
         <tbody>
-    <tr>
-        <th>Pathe zaal 1</th>
-        @foreach (var activity in Model.ActivityPatheZaal1)
-        {
-            //link naar detailpagina film
-            <td>
-                @activity.name <br />
-                @activity.type <br />
-                @activity.startTime.ToString("HH:mm") <br />
-                @activity.endTime.ToString("HH:mm")<br />
-                @activity.location <br />
-                @Html.ActionLink("Add to wishlist", "AddItem", "Films", new { Id = activity.Id }, null)
+
+            @foreach (var list in Model.MasterList)
+            {
+
+                <tr>
+                    <th></th>
+                    @foreach (var activity in list)
+                    {
+                        <td>
+                            @activity.name
+                            <br />
+                            @activity.type
+                            <br />
+                            @activity.startTime.ToString("HH:mm")
+                            -
+                            @activity.endTime.ToString("HH:mm")
+                            <br />
+                            @activity.location
+                            <br />
+                            @Html.ActionLink("Add to wishlist", "AddItem", "Films", new { Id = activity.Id }, null)
+                        </td>
+                    }
+                </tr>
+
+            }
 
 
-            </td>
 
-        }
-    </tr>
-            <tr>
-                <th>Pathe zaal 9</th>
-                @foreach (var activity in Model.ActivityPatheZaal9)
-                {
-                    //link naar detailpagina film
-                    <td>
-                        @activity.name <br />
-                        @activity.type <br />
-                        @activity.startTime.ToString("hh:mm") <br />
-                        @activity.endTime.TimeOfDay <br />
-                        @activity.location <br />
-                    </td>
-                }
-            </tr>
-            <tr>
-                <th>Pathe zaal 13</th>
-                @foreach (var activity in Model.ActivityPatheZaal13)
-                {
-                    //link naar detailpagina film
-                    <td>
-                        @activity.name <br />
-                        @activity.type <br />
-                        @activity.startTime.TimeOfDay <br />
-                        @activity.endTime.TimeOfDay <br />
-                        @activity.location <br />
-                    </td>
-                }
-            </tr>
-
-            <tr>
-                <th>Philharmonie Van Beinum zaal</th>
-                @foreach (var activity in Model.philharmonieVanBeinumZaal)
-                {
-                    //link naar detailpagina film
-                    <td>
-                        @activity.name <br />
-                        @activity.type <br />
-                        @activity.startTime.TimeOfDay <br />
-                        @activity.endTime.TimeOfDay <br />
-                        @activity.location <br />
-                    </td>
-                }
-            </tr>
-
-            <tr>
-                <th>Philharmonie Artiestenfoyer</th>
-                @foreach (var activity in Model.PhilharmonieArtiestenfoyer)
-                {
-                    //link naar detailpagina film
-                    <td>
-                        @activity.name <br />
-                        @activity.type <br />
-                        @activity.startTime.TimeOfDay <br />
-                        @activity.endTime.TimeOfDay <br />
-                        @activity.location <br />
-                    </td>
-                }
-            </tr>
-
-            <tr>
-                <th>Toneelschuur Filmzaal 1</th>
-                @foreach (var activity in Model.toneelschuurFilmzaal1)
-                {
-                    //link naar detailpagina film
-                    <td>
-                        @activity.name <br />
-                        @activity.type <br />
-                        @activity.startTime.TimeOfDay <br />
-                        @activity.endTime.TimeOfDay <br />
-                        @activity.location <br />
-                    </td>
-                }
-            </tr>
-
-            <tr>
-                <th>Toneelschuur Filmzaal 2</th>
-                @foreach (var activity in Model.toneelschuurFilmzaal2)
-                {
-                    //link naar detailpagina film
-                    <td>
-                        @activity.name <br />
-                        @activity.type <br />
-                        @activity.startTime.TimeOfDay <br />
-                        @activity.endTime.TimeOfDay <br />
-                        @activity.location <br />
-                    </td>
-                }
-            </tr>
-
-
-</tbody>
+        </tbody>
     </table>
 </div>
-
-
-
-

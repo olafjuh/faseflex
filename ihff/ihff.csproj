@@ -193,6 +193,7 @@
     <Compile Include="Controllers\AgendaBlokkenController.cs" />
     <Compile Include="Controllers\DbRepository.cs" />
     <Compile Include="Controllers\FilmsController.cs" />
+    <Compile Include="Controllers\FoodAndFilmController.cs" />
     <Compile Include="Controllers\ihffContext.cs" />
     <Compile Include="Controllers\template\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -340,6 +341,7 @@
     <Content Include="Views\Films\Index.cshtml" />
     <Content Include="Views\Films\AddItem.cshtml" />
     <Content Include="Views\Wishlist\EditItem.cshtml" />
+    <Content Include="Views\FoodAndFilm\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
