@@ -2,8 +2,11 @@
 @model ActivitiesPerLocation
 
 <h1>Blokken schema</h1>
-
+@Html.ActionLink("Woensdag", "AgendaOfADay", "AgendaBlokken", new { day = 0 }, null)
 @Html.ActionLink("Donderdag", "AgendaOfADay", "AgendaBlokken", new { day = 1 }, null)
+@Html.ActionLink("Vrijdag", "AgendaOfADay", "AgendaBlokken", new { day = 2 }, null)
+@Html.ActionLink("Zaterdag", "AgendaOfADay", "AgendaBlokken", new { day = 3 }, null)
+@Html.ActionLink("Zondag", "AgendaOfADay", "AgendaBlokken", new { day = 4 }, null)
 
 <div id="wishlist-wrapper">
     <table id="wishlist-table">
@@ -12,7 +15,6 @@
 
             @foreach (var list in Model.MasterList)
             {
-
                 <tr>
                     <th></th>
                     @foreach (var activity in list)

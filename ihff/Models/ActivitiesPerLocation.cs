@@ -23,7 +23,7 @@ namespace ihff.Models
                 List<Activity> sublist = new List<Activity>();
                 foreach (Activity activitys in activiteiten)
                 {
-                    if (activitys.location == locations.ElementAt(i))
+                    if (activitys.location == locations.ElementAt(i)&&activitys.startTime.DayOfYear==dayOfTheYear)
                     {
                         sublist.Add(activitys);
                         MasterList.Add(sublist);

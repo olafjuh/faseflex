@@ -12,12 +12,19 @@ namespace ihff.Models
     {
         public static string HashThePassword(string password)
         {
+            //aanmaken arrays
             byte[] salt;
             byte[] buffer2;
+            //check
             if (password == null)
             {
                 throw new ArgumentNullException("password");
             }
+            //Rfc2898DeriveBytes is an implementation of PBKDF2 (a Key Derivation Function)
+            //wilekeurige lengte passwords
+            // random. dus zelft string waarde maar andere paswords.
+            // meer iteraraties = langer te doen om alle mogelijheden van 1 pasword te maken.
+            //
             using (Rfc2898DeriveBytes bytes = new Rfc2898DeriveBytes(password, 0x10, 0x3e8))
             {
                 salt = bytes.Salt;

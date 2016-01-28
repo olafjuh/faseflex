@@ -30,10 +30,10 @@ namespace ihff.Controllers
         {
             IEnumerable<Activity> activities = repository.GetActivities();
             int dayOfTheYearFirstday = activities.First().startTime.DayOfYear;
-            int dayoftheyear = +day;
+            int dayoftheyear = dayOfTheYearFirstday + day;
             IEnumerable<string> locations = repository.GetLocations();
             ActivitiesPerLocation activitiesOfAday = new ActivitiesPerLocation(activities, dayoftheyear, locations);
-            return View(activitiesOfAday);
+            return View("Index",activitiesOfAday);
         }
 
     }
