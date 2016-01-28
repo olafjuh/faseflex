@@ -11,6 +11,7 @@ namespace ihff.Models
     {
         public int Id { get; set; }
         [Required(ErrorMessage = "Voor uw email in a.u.b.")]
+        [DataType(DataType.EmailAddress)]
         [Display(Name = "E-mail adres")]
         public string email { get; set; }
         public bool paid { get; set; }

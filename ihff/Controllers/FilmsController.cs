@@ -26,6 +26,7 @@ namespace ihff.Controllers
             wishlistItem.startTime = activity.startTime;
             wishlistItem.endTime = activity.endTime;
             wishlistItem.actID = activity.Id;
+            wishlistItem.persons = null;
 
             wishlistItem.type = "Film";
             return View(wishlistItem);
@@ -35,20 +36,24 @@ namespace ihff.Controllers
         [HttpPost]
         public ActionResult AddItem(WishlistItem wishlistItem)
         {
-            Wishlist wishlist = new Wishlist();
-
-            if (!(Session["active_wishlist"] == null))
+            if (ModelState.IsValid)
             {
-                wishlist = (Wishlist)Session["active_wishlist"];
-                wishlist.wishlistItems.Add(wishlistItem);
-            }
-            else
-            {
-                wishlist.wishlistItems.Add(wishlistItem);
-                Session["active_wishlist"] = wishlist;
-            }
+                Wishlist wishlist = new Wishlist();
 
-            return RedirectToAction("Index", "Wishlist");
+                if (!(Session["active_wishlist"] == null))
+                {
+                    wishlist = (Wishlist)Session["active_wishlist"];
+                    wishlist.wishlistItems.Add(wishlistItem);
+                }
+                else
+                {
+                    wishlist.wishlistItems.Add(wishlistItem);
+                    Session["active_wishlist"] = wishlist;
+                }
+                return RedirectToAction("Index", "Wishlist");
+            }
+            return View(wishlistItem);
+            
         }
         // check
     }
