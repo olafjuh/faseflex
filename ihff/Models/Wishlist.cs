@@ -12,7 +12,7 @@ namespace ihff.Models
         public int Id { get; set; }
         [Required(ErrorMessage = "Voor uw email in a.u.b.")]
         [EmailAddress]
-        [RegularExpression(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*", ErrorMessage = "Must be a valid Email Address")]
+        [RegularExpression(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*", ErrorMessage = "Geef a.u.b. een correct e-mail adres op.")]
         [Display(Name = "E-mail adres")]
         public string email { get; set; }
         public bool paid { get; set; }
