@@ -110,6 +110,14 @@ namespace ihff.Controllers
             ctx.SaveChanges();
         }
 
+        public bool CheckEmail(string email)
+        {
+            if ((ctx.Wishlists.Where(c => c.email == email) == null))
+            {
+                return true;
+            }
+            return false;
+        }
         //----------------FILMS
 
         public List<Activity> GetAllFilms()

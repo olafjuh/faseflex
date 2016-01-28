@@ -64,9 +64,17 @@ namespace ihff.Controllers
         {
             if (ModelState.IsValid)
             {
-                Wishlist checkedwishlist = repository.GetWishlist(wishlist.email);
-                Session["active_wishlist"] = checkedwishlist;
-                return RedirectToAction("Index");
+                //if (repository.CheckEmail(wishlist.email))
+                //{
+                    Wishlist checkedwishlist = repository.GetWishlist(wishlist.email);
+                    Session["active_wishlist"] = checkedwishlist;
+                    return RedirectToAction("Index");
+                //}
+                //else
+                //{
+                //    ModelState.AddModelError("email", "Ingevoerde e-mail bestaat niet.");
+                //    return View(wishlist);
+                //}
             }
             return View(wishlist);
         }
