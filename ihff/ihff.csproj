@@ -336,6 +336,7 @@
     <Content Include="Views\FoodAndFilm\Index.cshtml" />
     <Content Include="Views\Accounts\AddAccount.cshtml" />
     <Content Include="Views\Accounts\Login.cshtml" />
+    <Content Include="Views\Accounts\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
