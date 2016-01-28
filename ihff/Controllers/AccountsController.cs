@@ -19,7 +19,6 @@ namespace ihff.Controllers
             IEnumerable<Activity> activities = repository.GetActivities();
             return View(activities);
         }
-        // GET: Account
         private DbRepository repository = new DbRepository();
         public ActionResult AddAccount()
         {
@@ -41,8 +40,6 @@ namespace ihff.Controllers
                     accounts.EmailAddress, hashPasword, accounts.AccesTo);
                 repository.AddAccount(account);
                 FormsAuthentication.SetAuthCookie(account.EmailAddress, false);
-
-                //remember completaccount
                 Session["loggedin_account"] = account;
                 return RedirectToAction("Index");
             }
@@ -60,11 +57,7 @@ namespace ihff.Controllers
                 if (account != null)
                 {
                     FormsAuthentication.SetAuthCookie(account.EmailAddress, false);
-
-                    //remember completaccount
                     Session["loggedin_account"] = account;
-
-                    //redirect to default entry of the Contact controller
                     return RedirectToAction("Index");
                 }
                 else
@@ -77,9 +70,6 @@ namespace ihff.Controllers
             {
                 return View("Login");
             }
-            // there was an error occured, go back to Login page
-            //return View(login_account);
-            //   return View("LoginWithLoginModel", login_account);
         }
 
         [HttpPost]
@@ -87,7 +77,6 @@ namespace ihff.Controllers
         {
             FormsAuthentication.SignOut();
 
-            // redirect too login of the account controller
             return RedirectToAction("Login", "Accounts");
         }
     }
