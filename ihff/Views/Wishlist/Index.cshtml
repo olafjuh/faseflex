@@ -19,9 +19,10 @@
                 <tr>
                     <td>@item.name</td>
                     <td>@item.location</td>
-                    <td>@item.startTime</td>
+                    <td>@item.startTime.ToString("dddd HH:mm")</td>
                     <td>@item.persons</td>
-                    <td></td> @Html.ActionLink("Aanpassen", "EditItem", new { id = item.Id }) @Html.ActionLink("Verwijderen", "RemoveItem", new { id = item.Id})
+                    <td></td> 
+                    <td>@Html.ActionLink("Aanpassen", "EditItem", new { id = item.Id }) @Html.ActionLink("Verwijderen", "RemoveItem", new { id = item.Id})</td>
                 </tr>
             }
            <tr>
@@ -31,7 +32,7 @@
                 Totaal: @foreach (var item in Model)
                                 totaal= totaal+item.*@ Totaal:</td>
                 <td></td>
-                <td>30,00</td>
+                <td></td>
             </tr>
         </tbody>
     </table>

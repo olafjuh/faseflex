@@ -71,13 +71,13 @@ namespace ihff.Controllers
         [HttpPost]
         public ActionResult GetWishlist(Wishlist wishlist)
         {
-            //if (ModelState.IsValid)
-            //{
+            if (ModelState.IsValid)
+            {
                 Wishlist checkedwishlist = repository.GetWishlist(wishlist.email);
                 Session["active_wishlist"] = checkedwishlist;
                 return RedirectToAction("Index");
-            //}
-            //return View(wishlist);
+            }
+            return View(wishlist);
         }
 
         public ActionResult NewWishlist()
@@ -100,14 +100,18 @@ namespace ihff.Controllers
         [HttpPost]
         public ActionResult EditItem(WishlistItem wishlistItem)
         {
-            Wishlist wishlist = (Wishlist)Session["active_wishlist"];
-            WishlistItem oldWishlistItem = wishlist.wishlistItems.SingleOrDefault(c => c.Id == wishlistItem.Id);
-            wishlist.wishlistItems.Remove(oldWishlistItem);
-            wishlist.wishlistItems.Add(wishlistItem);
-            wishlist.Id++;
-            Session["active_wishlist"] = wishlist;
+            if (ModelState.IsValid)
+            {
+                Wishlist wishlist = (Wishlist)Session["active_wishlist"];
+                WishlistItem oldWishlistItem = wishlist.wishlistItems.SingleOrDefault(c => c.Id == wishlistItem.Id);
+                wishlist.wishlistItems.Remove(oldWishlistItem);
+                wishlist.wishlistItems.Add(wishlistItem);
+                wishlist.Id++;
+                Session["active_wishlist"] = wishlist;
 
-            return RedirectToAction("Index");
+                return RedirectToAction("Index");
+            }
+            return View(wishlistItem);
         }
 
         public ActionResult RemoveItem(int id)
