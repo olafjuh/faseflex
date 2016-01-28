@@ -190,23 +190,24 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountsController.cs" />
     <Compile Include="Controllers\AgendaBlokkenController.cs" />
     <Compile Include="Controllers\DbRepository.cs" />
     <Compile Include="Controllers\FilmsController.cs" />
     <Compile Include="Controllers\FoodAndFilmController.cs" />
     <Compile Include="Controllers\ihffContext.cs" />
-    <Compile Include="Controllers\template\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\template\LoginController.cs" />
     <Compile Include="Controllers\WishlistController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Account.cs" />
     <Compile Include="Models\ActivitiesPerLocation.cs" />
     <Compile Include="Models\Activity.cs" />
-    <Compile Include="Models\template\AccountModels.cs" />
-    <Compile Include="Models\template\LoginModels.cs" />
+    <Compile Include="Models\AddNewAccount.cs" />
+    <Compile Include="Models\HashPassword.cs" />
+    <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\Wishlist.cs" />
     <Compile Include="Models\WishlistItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -317,15 +318,6 @@
     <Content Include="Images\orderedList8.png" />
     <Content Include="Images\orderedList9.png" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\Account\_RemoveExternalLoginsPartial.cshtml" />
-    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Manage.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -342,6 +334,8 @@
     <Content Include="Views\Films\AddItem.cshtml" />
     <Content Include="Views\Wishlist\EditItem.cshtml" />
     <Content Include="Views\FoodAndFilm\Index.cshtml" />
+    <Content Include="Views\Accounts\AddAccount.cshtml" />
+    <Content Include="Views\Accounts\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

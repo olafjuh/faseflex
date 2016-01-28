@@ -10,7 +10,32 @@ namespace ihff.Controllers
     {
         private ihffContext ctx = new ihffContext();
         public IEnumerable<WishlistItem> films;
-
+        // maccount
+        public Account GetAccount(string emailAddress, string password)
+        {
+            foreach (Account x in ctx.Accounts)
+            {
+                if (HashPassword.VerifyHashedPassword(x.Password, password))
+                {
+                    if (x.EmailAddress == emailAddress)
+                    {
+                        return x;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+            }
+            return null;
+            /*Account c = ctx.Accounts.SingleOrDefault(d => d.EmailAddress == emailAddress && d.Password == password);
+            return c;*/
+        }
+        public void AddAccount(Account account)
+        {
+            ctx.Accounts.Add(account);
+            ctx.SaveChanges();
+        }
         //mblokken schema
         public IEnumerable<Activity> GetActivities()
         {
